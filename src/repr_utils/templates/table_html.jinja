@@ -1,0 +1,22 @@
+<table>
+    <thead style="font-weight: bold">
+    <tr>
+    {% for column in table.columns %}
+        <th>{{ column }}</th>
+    {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in table.values %}
+        <tr>
+        {% for cell in row %}
+        {% if loop.first and table.has_index %}
+            <th>{{ cell }}</th>
+        {% else %}
+            <td>{{ cell }}</td>
+        {% endif %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
