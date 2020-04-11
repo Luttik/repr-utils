@@ -1,9 +1,10 @@
 from dataclasses import dataclass
-from typing import List, Any
+from typing import List
+
 from tabulate import tabulate
 
-from repr_utils._jinja import get_template
 from repr_utils._base import ReprBase
+from repr_utils._jinja import get_template
 
 
 @dataclass

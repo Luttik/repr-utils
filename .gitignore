@@ -2,3 +2,6 @@
 .idea/
 *.egg-info/
 **/__pycache__/
+dist/
+/setup.py
+.venv/

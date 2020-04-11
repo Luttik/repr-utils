@@ -1,4 +1,4 @@
-from jinja2 import Environment, Template, PackageLoader
+from jinja2 import Environment, PackageLoader, Template
 
 
 def get_template(file_name: str) -> Template:

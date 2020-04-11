@@ -1,5 +1,6 @@
-from repr_utils import __version__, Header, Table
 from unittest import TestCase
+
+from repr_utils import Header, Table, __version__
 
 
 def test_version():
