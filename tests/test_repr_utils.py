@@ -1,10 +1,6 @@
 from unittest import TestCase
 
-from repr_utils import Header, Table, __version__
-
-
-def test_version():
-    assert __version__ == "0.1.0"
+from repr_utils import Header, Table
 
 
 class HeaderTester(TestCase):
