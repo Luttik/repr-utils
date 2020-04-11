@@ -13,10 +13,10 @@ class Table(ReprBase):
     values: List[List[str]]
     has_index: bool = False
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.__tabulate()
 
-    def __tabulate(self, fmt="pretty") -> str:
+    def __tabulate(self, fmt: str = "pretty") -> str:
         return tabulate(
             self.values,
             colalign=[(0, "r")] if self.has_index else None,
@@ -24,10 +24,10 @@ class Table(ReprBase):
             tablefmt=fmt,
         )
 
-    def _repr_markdown_(self):
+    def _repr_markdown_(self) -> str:
         return self.__tabulate()
 
-    def _repr_latex_(self):
+    def _repr_latex_(self) -> str:
         return self.__tabulate(fmt="latex")
 
     def _repr_html_(self) -> str:

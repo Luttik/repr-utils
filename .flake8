@@ -1,0 +1,3 @@
+[flake8]
+select = ANN,B,B9,BLK,C,E,F,I,S,W
+ignore = ANN101

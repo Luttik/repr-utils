@@ -14,8 +14,8 @@ class Header(ReprBase):
     def _repr_markdown_(self) -> str:
         return f'{"#" * self.header_number} {self.text}'
 
-    def _repr_latex_(self):
+    def _repr_latex_(self) -> str:
         return f'\\{"sub" * (self.header_number - 1)}header{{{self.text}}}'
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.text
