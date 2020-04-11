@@ -1,4 +1,4 @@
 __version__ = "0.1.0"
 
-from .header import Header
-from .table import Table
+from .header import Header  # noqa
+from .table import Table  # noqa

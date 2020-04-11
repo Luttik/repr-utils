@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "repr-utils"
-version = "0.1.0"
-description = """
+version = "0.1.1"
+description = """\
     Contains common ellements that when displayed will adhere to the correct format \
     (e.g markdown, latex, html, text) \
     in tools like jupyter notebooks"""
@@ -21,6 +21,7 @@ pytest = "^5.2"
 black = "^19.10b0"
 dephell = "^0.8.2"
 invoke = "^1.4.1"
+flake8 = "^3.7.9"
 
 [tool.dephell.main]
 from = {format="poetry", path="pyproject.toml"}
