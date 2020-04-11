@@ -11,7 +11,7 @@ license = "MIT"
 repository = "https://github.com/Luttik/repr_utils"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 jinja2 = "^2.11.1"
 tabulate = "^0.8.7"
 isort = "^4.3.21"
