@@ -31,7 +31,7 @@ jobs:
         poetry install 
     - name: Lint with flake8, black and isort
       run: |
-        black --check
+        black --check .
         isort --check -rc .
         flake8 src
     - name: Test with pytest
