@@ -12,7 +12,7 @@ class HeaderTester(TestCase):
         self.assertEqual(
             f"## {name}", header._repr_markdown_(),
         )
-        self.assertEqual(f"\\subheader{{{name}}}", header._repr_latex_())
+        self.assertEqual(f"\\subsection{{{name}}}", header._repr_latex_())
 
 
 class TableTester(TestCase):

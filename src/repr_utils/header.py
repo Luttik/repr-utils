@@ -15,7 +15,7 @@ class Header(ReprBase):
         return f'{"#" * self.header_number} {self.text}'
 
     def _repr_latex_(self) -> str:
-        return f'\\{"sub" * (self.header_number - 1)}header{{{self.text}}}'
+        return f'\\{"sub" * (self.header_number - 1)}section{{{self.text}}}'
 
     def __repr__(self) -> str:
         return self.text
