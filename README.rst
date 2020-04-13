@@ -5,8 +5,12 @@ A toolkit to quickly display elements in tools like `jupyter`_ by building upon 
 Contains simple objects that will automatically be converted to the right format based on the context.
 
 Installation
-=======
+============
 Run :code:`pip install repr_issues`
+
+Examples
+========
+Look at `the examples notebook`_
 
 Supports:
 =========
@@ -27,6 +31,7 @@ Relevant links:
 
 Contributions are appreciated.
 
+.. _`the examples notebook`: examples.ipynb
 .. _`pypi`: https://pypi.org/project/repr-utils/
 .. _`github`: https://github.com/Luttik/repr_utils/
 .. _`ipython rich display`: https://ipython.readthedocs.io/
