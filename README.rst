@@ -1,8 +1,13 @@
 .. image:: https://github.com/luttik/repr_utils/workflows/CI/badge.svg
-  :alt: actions batch
-  :target: https://github.com/Luttik/repr_utils/actions?query=workflow%3ACI+branch%3Amaster
+    :alt: actions batch
+    :target: https://github.com/Luttik/repr_utils/actions?query=workflow%3ACI+branch%3Amaster
 .. image:: https://badge.fury.io/py/repr-utils.svg
-  :target: https://pypi.org/project/repr-utils/
+    :alt: pypi
+    :target: https://pypi.org/project/repr-utils/
+
+.. image:: https://codecov.io/gh/luttik/repr_utils/branch/master/graph/badge.svg
+    :alt: codecov
+    :target: https://codecov.io/gh/<your-username>/hypermodern-python
 
 REPR-UTIL
 ---------
