@@ -12,7 +12,7 @@ Contains simple objects that will automatically be converted to the right format
 
 Installation
 ============
-Run :code:`pip install repr-issues`
+Run :code:`pip install repr-utils`
 
 Examples
 ========
