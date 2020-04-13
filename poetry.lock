@@ -17,7 +17,7 @@ yarl = ">=1.0,<2.0"
 speedups = ["aiodns", "brotlipy", "cchardet"]
 
 [[package]]
-category = "main"
+category = "dev"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 name = "appdirs"
 optional = false
@@ -51,7 +51,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "1.3.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Classes Without Boilerplate"
 name = "attrs"
 optional = false
@@ -73,7 +73,7 @@ python-versions = "*"
 version = "0.1.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "The uncompromising code formatter."
 name = "black"
 optional = false
@@ -132,12 +132,24 @@ python-versions = "*"
 version = "3.0.4"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Composable command line interface toolkit"
 name = "click"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "7.1.1"
+
+[[package]]
+category = "dev"
+description = "Hosted coverage reports for GitHub, Bitbucket and Gitlab"
+name = "codecov"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.0.22"
+
+[package.dependencies]
+coverage = "*"
+requests = ">=2.7.9"
 
 [[package]]
 category = "dev"
@@ -385,7 +397,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "0.16"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Discover and load entry points from installed packages."
 name = "entrypoints"
 optional = false
@@ -393,7 +405,7 @@ python-versions = ">=2.7"
 version = "0.3"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "the modular source code checker: pep8, pyflakes and co"
 name = "flake8"
 optional = false
@@ -422,7 +434,7 @@ python = "<3.8"
 version = ">=1.4,<2.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "flake8 plugin to call black as a code style validator"
 name = "flake8-black"
 optional = false
@@ -434,7 +446,7 @@ black = ">=19.3b0"
 flake8 = ">=3.0.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "flake8 plugin that integrates isort ."
 name = "flake8-isort"
 optional = false
@@ -564,7 +576,7 @@ version = ">=4.0.0"
 test = ["pytest (>=3.6.0)", "pytest-cov", "mock"]
 
 [[package]]
-category = "main"
+category = "dev"
 description = "A Python utility / library to sort Python imports."
 name = "isort"
 optional = false
@@ -713,7 +725,7 @@ python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
 version = "1.1.1"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "McCabe checker, plugin for flake8"
 name = "mccabe"
 optional = false
@@ -847,7 +859,7 @@ version = "0.6.2"
 testing = ["docopt", "pytest (>=3.0.7)"]
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Utility library for gitignore style pattern matching of file paths."
 name = "pathspec"
 optional = false
@@ -928,7 +940,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "1.8.1"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Python style guide checker"
 name = "pycodestyle"
 optional = false
@@ -936,7 +948,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.5.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "passive checker of Python programs"
 name = "pyflakes"
 optional = false
@@ -1079,7 +1091,7 @@ python-versions = "*"
 version = "1.9.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Alternative regular expression module, to replace re."
 name = "regex"
 optional = false
@@ -1179,7 +1191,7 @@ pywinpty = ">=0.5"
 tornado = ">=4"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "A collection of helpers and mock objects for unit tests and doc tests."
 name = "testfixtures"
 optional = false
@@ -1203,7 +1215,7 @@ version = "0.4.4"
 test = ["pathlib2"]
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Python Library for Tom's Obvious, Minimal Language"
 name = "toml"
 optional = false
@@ -1243,7 +1255,7 @@ six = "*"
 test = ["pytest", "mock"]
 
 [[package]]
-category = "main"
+category = "dev"
 description = "a fork of Python 2 and 3 ast modules with type comment support"
 name = "typed-ast"
 optional = false
@@ -1324,7 +1336,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "0ea1c0e1e0787c63b3b6f1e0d38ee700c3e9816e593c58c79a80f5cd6083bbd8"
+content-hash = "537204470416be635e31b50719ec12e7249eb1a983f060c9be8e3af553e68da2"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -1388,6 +1400,10 @@ chardet = [
 click = [
     {file = "click-7.1.1-py2.py3-none-any.whl", hash = "sha256:e345d143d80bf5ee7534056164e5e112ea5e22716bbb1ce727941f4c8b471b9a"},
     {file = "click-7.1.1.tar.gz", hash = "sha256:8a18b4ea89d8820c5d0c7da8a64b2c324b4dabb695804dbfea19b9be9d88c0cc"},
+]
+codecov = [
+    {file = "codecov-2.0.22-py2.py3-none-any.whl", hash = "sha256:09fb045eb044a619cd2b9dacd7789ae8e322cb7f18196378579fd8d883e6b665"},
+    {file = "codecov-2.0.22.tar.gz", hash = "sha256:aeeefa3a03cac8a78e4f988e935b51a4689bb1f17f20d4e827807ee11135f845"},
 ]
 colorama = [
     {file = "colorama-0.4.3-py2.py3-none-any.whl", hash = "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff"},
