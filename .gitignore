@@ -7,3 +7,4 @@ dist/
 .venv/
 /.coverage
 **/.ipynb_checkpoints/*
+/coverage.xml
