@@ -19,4 +19,4 @@ flake8 = simple_task(name="flake8", commands="flake8 src")
 
 test = simple_task(name="test", commands="pytest --cov")
 
-check = simple_task(name="check", commands="inv format make-setup test flake8")
+check = simple_task(name="check", commands="inv make-setup format flake8 test")

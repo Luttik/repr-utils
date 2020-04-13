@@ -14,7 +14,6 @@ repository = "https://github.com/Luttik/repr_utils"
 python = "^3.7"
 jinja2 = "^2.11.1"
 tabulate = "^0.8.7"
-isort = "^4.3.21"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -26,6 +25,9 @@ flake8-annotations = "^2.0.1"
 coverage = {extras = ["toml"], version = "^5.0.4"}
 pytest-cov = "^2.8.1"
 jupyter = "^1.0.0"
+isort = "^4.3.21"
+flake8-black = "^0.1.1"
+flake8-isort = { git = "https://github.com/jnns/flake8-isort.git", branch = "noconf" }
 
 [tool.dephell.main]
 from = {format="poetry", path="pyproject.toml"}

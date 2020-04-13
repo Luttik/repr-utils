@@ -29,10 +29,8 @@ jobs:
         pip install poetry
         poetry config virtualenvs.create false
         poetry install 
-    - name: Lint with flake8, black and isort
+    - name: Lint with flake8
       run: |
-        black --check .
-        isort --check -q -rc .
         flake8 src
     - name: Test with pytest
       run: |
