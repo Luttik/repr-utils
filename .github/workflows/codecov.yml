@@ -29,6 +29,7 @@ jobs:
         poetry install
     - name: upload codecov data
       run: |
+        pytest --cov
         coverage xml
         codecov
       env:
