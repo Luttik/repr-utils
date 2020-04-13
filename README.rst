@@ -1,3 +1,9 @@
+.. image:: https://github.com/luttik/repr_utils/workflows/CI/badge.svg
+  :alt: actions batch
+  :target: https://github.com/Luttik/repr_utils/actions?query=workflow%3ACI+branch%3Amaster
+.. image:: https://badge.fury.io/py/repr-utils.svg
+  :target: https://pypi.org/project/repr-utils/
+
 REPR-UTIL
 ---------
 A toolkit to quickly display elements in tools like `jupyter`_ by building upon `ipython rich display`_.
@@ -6,7 +12,7 @@ Contains simple objects that will automatically be converted to the right format
 
 Installation
 ============
-Run :code:`pip install repr_issues`
+Run :code:`pip install repr-issues`
 
 Examples
 ========
