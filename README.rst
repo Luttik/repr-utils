@@ -7,7 +7,7 @@
 
 .. image:: https://codecov.io/gh/luttik/repr_utils/branch/master/graph/badge.svg
     :alt: codecov
-    :target: https://codecov.io/gh/<your-username>/hypermodern-python
+    :target: https://codecov.io/gh/luttik/repr_utils
 
 REPR-UTIL
 ---------
