@@ -14,8 +14,7 @@ class List(ReprBase):
     numbered: bool = False
 
     def __repr__(self) -> str:
-        # todo prettify
-        return str(self.values)
+        return self._repr_markdown_()
 
     def get_value_repr(self, item) -> ReprBase:
         if isinstance(item, ReprBase):
