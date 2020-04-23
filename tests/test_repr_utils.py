@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from repr_utils import Header, Table
+from repr_utils import Header, Table, List
 
 
 class HeaderTester(TestCase):
@@ -28,3 +28,25 @@ class TableTester(TestCase):
         self.assertIsNotNone(table._repr_html_())
         self.assertIsNotNone(table._repr_markdown_())
         self.assertIsNotNone(table._repr_latex_())
+
+
+class ListTester(TestCase):
+    def test_list(self):
+        list = List(
+            {
+                'foo': 'bar',
+                'nested list': [
+                    'Item 1',
+                    'Item 2',
+                    'two items coming up',
+                    [1, 2],
+                    dict(a=1, b=2),
+                ],
+                'nested dictionary': {
+                    'More nesting': [1, 2, 3]
+                }
+            }
+        )
+        list._repr_html_()
+        self.assertIsNotNone(str(list))
+        self.assertIsNotNone(list._repr_html_())
