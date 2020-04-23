@@ -34,6 +34,7 @@ Current objects:
 ================
 - Header
 - Table
+- Lists
 
 Relevant links:
 ===============
