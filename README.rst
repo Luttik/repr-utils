@@ -25,7 +25,7 @@ Look at `the examples notebook`_
 
 Supports:
 =========
-- Raw Text
+- Plain Text
 - HTML
 - Markdown
 - Latex
