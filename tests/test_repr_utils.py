@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from repr_utils import Header, Table, List
+from repr_utils import Header, List, Table
 
 
 class HeaderTester(TestCase):
@@ -32,21 +32,61 @@ class TableTester(TestCase):
 
 class ListTester(TestCase):
     def test_list(self):
-        list = List(
+        _list = List(
             {
-                'foo': 'bar',
-                'nested list': [
-                    'Item 1',
-                    'Item 2',
-                    'two items coming up',
+                "foo": "bar",
+                "nested list": [
+                    "Item 1",
+                    "Item 2",
+                    "two items coming up",
                     [1, 2],
                     dict(a=1, b=2),
                 ],
-                'nested dictionary': {
-                    'More nesting': [1, 2, 3]
-                }
+                "nested dictionary": {"More nesting": [1, 2, 3]},
             }
         )
-        list._repr_html_()
-        self.assertIsNotNone(str(list))
-        self.assertIsNotNone(list._repr_html_())
+        _list._repr_html_()
+        self.assertIsNotNone(str(_list))
+        self.assertIsNotNone(_list._repr_html_())
+        self.assertIsNotNone(_list._repr_markdown_())
+        self.assertIsNotNone(_list._repr_latex_())
+
+    def test_list_enumeration(self):
+        _list = List(
+            {
+                "foo": "bar",
+                "nested list": [
+                    "Item 1",
+                    "Item 2",
+                    "two items coming up",
+                    [1, 2],
+                    dict(a=1, b=2),
+                ],
+                "nested dictionary": {"More nesting": [1, 2, 3]},
+            },
+            numbered=True,
+        )
+        self.assertIsNotNone(str(_list))
+        self.assertIsNotNone(_list._repr_html_())
+        self.assertIsNotNone(_list._repr_markdown_())
+        self.assertIsNotNone(_list._repr_latex_())
+
+    def test_list_mixed(self):
+        _list = List(
+            {
+                "foo": "bar",
+                "nested list": List([
+                    "Item 1",
+                    "Item 2",
+                    "two items coming up",
+                    [1, 2],
+                    dict(a=1, b=2),
+                ]),
+                "nested dictionary": {"More nesting": [1, 2, 3]},
+            },
+            numbered=True,
+        )
+        self.assertIsNotNone(str(_list))
+        self.assertIsNotNone(_list._repr_html_())
+        self.assertIsNotNone(_list._repr_markdown_())
+        self.assertIsNotNone(_list._repr_latex_())
