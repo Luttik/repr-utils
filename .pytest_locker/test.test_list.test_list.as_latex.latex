@@ -1,0 +1,26 @@
+\begin{enumerate}
+\item foo: bar
+\item nested list
+\begin{enumerate}
+\item Item 1
+\item Item 2
+\item two items coming up
+\begin{enumerate}
+\item 1
+\item 2
+\end{enumerate}
+\begin{enumerate}
+\item a: 1
+\item b: 2
+\end{enumerate}
+\end{enumerate}
+\item nested dictionary
+\begin{enumerate}
+\item More nesting
+\begin{enumerate}
+\item 1
+\item 2
+\item 3
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}

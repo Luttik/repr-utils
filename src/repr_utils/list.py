@@ -28,7 +28,7 @@ class List(ReprBase):
                 [
                     f"<li>{key}: {value}</li>"
                     if not self.instance_of_any(value, [Mapping, Sequence, ReprBase])
-                    else f"<li>{key}</li> {self.get_value_repr(value)._repr_html_()}"
+                    else f"<li>{key}</li>\n{self.get_value_repr(value)._repr_html_()}"
                     for key, value in self.values.items()
                 ]
             )
