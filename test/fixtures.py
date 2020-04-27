@@ -4,6 +4,8 @@ from _pytest.fixtures import FixtureRequest
 from pytest import fixture
 import difflib
 
+from repr_utils._base import ReprBase
+
 
 class UserDidNotExceptDataException(Exception):
     ...
@@ -94,7 +96,8 @@ class Locker:
                 ]
             )
         )
-        return self.__write_if_accepted(path, value, "Do you accept the new data? (y|n)")
+        return self.__write_if_accepted(path, value,
+                                        "Do you accept the new data? (y|n)")
 
     def __write_if_accepted(self, data: str, lock_path: Path):
         lock_path.parent.mkdir(parents=True, exist_ok=True)
@@ -105,7 +108,8 @@ class Locker:
         else:
             raise UserDidNotExceptDataException()
 
-    def __user_accepts(self):
+    @classmethod
+    def __user_accepts(cls):
         is_correct = None
         while is_correct not in ['y', 'n']:
             is_correct = input('Is this correct? (y|n)').lower()
@@ -113,5 +117,24 @@ class Locker:
 
 
 @fixture
-def locker(request: FixtureRequest):
+def locker(request: FixtureRequest) -> Locker:
     return Locker(request)
+
+
+class ReprLocker:
+    """ Locks max 1 per test """
+
+    def __init__(self, locker: Locker) -> None:
+        super().__init__()
+        self.locker = locker
+
+    def lock(self, data: ReprBase):
+        self.locker.lock(str(data), 'as_string', 'str')
+        self.locker.lock(data._repr_html_(), 'as_html', 'html')
+        self.locker.lock(data._repr_markdown_(), 'as_markdown', 'md')
+        self.locker.lock(data._repr_latex_(), 'as_latex', 'latex')
+
+
+@fixture
+def repr_locker(locker: Locker) -> ReprLocker:
+    return ReprLocker(locker)

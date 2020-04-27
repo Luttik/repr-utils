@@ -1,8 +1,8 @@
 from repr_utils import List
-from .fixtures import Locker
+from .fixtures import ReprLocker
 
 
-def test_list(locker: Locker):
+def test_unordered(repr_locker: ReprLocker):
     _list = List(
         {
             "foo": "bar",
@@ -16,14 +16,10 @@ def test_list(locker: Locker):
             "nested dictionary": {"More nesting": [1, 2, 3]},
         }
     )
-    _list._repr_html_()
-    locker.lock(str(_list), 'as_string')
-    locker.lock(_list._repr_html_(), 'as_html', 'html')
-    locker.lock(_list._repr_markdown_(), 'as_markdown', 'md')
-    locker.lock(_list._repr_latex_(), 'as_latex', 'latex')
+    repr_locker.lock(_list)
 
 
-def test_list_enumeration():
+def test_list_enumeration(repr_locker: ReprLocker):
     _list = List(
         {
             "foo": "bar",
@@ -38,13 +34,10 @@ def test_list_enumeration():
         },
         numbered=True,
     )
-    assert str(_list) is not None
-    assert _list._repr_html_() is not None
-    assert _list._repr_markdown_() is not None
-    assert _list._repr_latex_() is not None
+    repr_locker.lock(_list)
 
 
-def test_list_mixed():
+def test_list_mixed(repr_locker: ReprLocker):
     _list = List(
         {
             "foo": "bar",
@@ -59,7 +52,4 @@ def test_list_mixed():
         },
         numbered=True,
     )
-    assert str(_list) is not None
-    assert _list._repr_html_() is not None
-    assert _list._repr_markdown_() is not None
-    assert _list._repr_latex_() is not None
+    repr_locker.lock(_list)
