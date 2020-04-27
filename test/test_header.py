@@ -1,10 +1,8 @@
 from repr_utils import Header
+from test.fixtures import ReprLocker
 
 
-def test_header():
+def test_header(repr_locker: ReprLocker):
     name = "example"
     header = Header(name, 2)
-    assert str(header) == name
-    assert f"<h2>{name}</h2>" == header._repr_html_()
-    assert f"## {name}" == header._repr_markdown_()
-    assert f"\\subsection{{{name}}}" == header._repr_latex_()
+    repr_locker.lock(header)
