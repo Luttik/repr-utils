@@ -28,7 +28,7 @@ class List(ReprBase):
                 [
                     f"<li>{key}: {value}</li>"
                     if not self.instance_of_any(value, [Mapping, Sequence, ReprBase])
-                    else f"<li>{key}</li> {self.get_value_repr(value)._repr_html_()}"
+                    else f"<li>{key}</li>\n{self.get_value_repr(value)._repr_html_()}"
                     for key, value in self.values.items()
                 ]
             )
@@ -49,23 +49,31 @@ class List(ReprBase):
     def __handle_nested_markdown(self, value):
         return indent_each_line(self.get_value_repr(value)._repr_markdown_())
 
+    def __get_md_start(self, index: int):
+        if self.numbered:
+            return f'{index + 1}.'
+        return '-'
+
     def _repr_markdown_(self) -> str:
 
         if isinstance(self.values, Mapping):
             return "\n".join(
                 [
-                    f" - {key}: {value}"
+                    f" {self.__get_md_start(i)} {key}: {value}"
                     if not self.instance_of_any(value, [Mapping, Sequence, ReprBase])
-                    else f" - {key}\n{self.__handle_nested_markdown(value)}"
-                    for key, value in self.values.items()
+                    else (
+                        f" {self.__get_md_start(i)}"
+                        f" {key}\n{self.__handle_nested_markdown(value)}"
+                    )
+                    for i, (key, value) in enumerate(self.values.items())
                 ]
             )
         return "\n".join(
             [
-                f" - {item}"
+                f" {self.__get_md_start(i)} {item}"
                 if not self.instance_of_any(item, [Mapping, TypingList, ReprBase])
                 else self.__handle_nested_markdown(item)
-                for item in self.values
+                for i, item in enumerate(self.values)
             ]
         )
 

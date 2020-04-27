@@ -1,0 +1,14 @@
+ - foo: bar
+ - nested list
+     - Item 1
+     - Item 2
+     - two items coming up
+         - 1
+         - 2
+         - a: 1
+         - b: 2
+ - nested dictionary
+     - More nesting
+         - 1
+         - 2
+         - 3
