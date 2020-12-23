@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "repr-utils"
-version = "0.1.3"
+version = "0.2.1"
 description = """\
     Contains common elements that when displayed will adhere to the correct format \
     (e.g markdown, latex, html, text) \

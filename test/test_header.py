@@ -1,5 +1,6 @@
-from repr_utils import Header
 from test.fixtures import ReprLocker
+
+from repr_utils import Header
 
 
 def test_header(repr_locker: ReprLocker):

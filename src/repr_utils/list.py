@@ -51,8 +51,8 @@ class List(ReprBase):
 
     def __get_md_start(self, index: int):
         if self.numbered:
-            return f'{index + 1}.'
-        return '-'
+            return f"{index + 1}."
+        return "-"
 
     def _repr_markdown_(self) -> str:
 

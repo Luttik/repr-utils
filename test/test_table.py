@@ -1,5 +1,6 @@
-from repr_utils import Table
 from test.fixtures import ReprLocker
+
+from repr_utils import Table
 
 
 def test_table(repr_locker: ReprLocker):

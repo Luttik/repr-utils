@@ -1,8 +1,8 @@
+import difflib
 from pathlib import Path
 
 from _pytest.fixtures import FixtureRequest
 from pytest import fixture
-import difflib
 
 from repr_utils._base import ReprBase
 
@@ -12,7 +12,7 @@ class UserDidNotExceptDataException(Exception):
 
 
 ENCODING = "UTF8"
-SEPERATOR = '-' * 40
+SEPERATOR = "-" * 40
 
 
 class Locker:
@@ -23,9 +23,9 @@ class Locker:
 
     def __get_lock_base_path(self):
         node = self.request.node
-        return f'./.pytest_locker/{node.module.__name__}.{node.name}'
+        return f"./.pytest_locker/{node.module.__name__}.{node.name}"
 
-    def lock(self, data: str, name: str = None, extension: str = 'txt') -> None:
+    def lock(self, data: str, name: str = None, extension: str = "txt") -> None:
         """
         Checks if the given data equals the data in a lock file.
         Otherwise prompts the user if the data is correct.
@@ -36,9 +36,9 @@ class Locker:
         """
         self.call_counter += 1
         base = self.__get_lock_base_path()
-        lock_path = Path(f'{base}.{name if name else self.call_counter}.{extension}')
+        lock_path = Path(f"{base}.{name if name else self.call_counter}.{extension}")
         if lock_path.exists():
-            with lock_path.open('r', encoding=ENCODING) as file:
+            with lock_path.open("r", encoding=ENCODING) as file:
                 old_data = file.read()
             if old_data == data:
                 return
@@ -94,13 +94,14 @@ class Locker:
                 ]
             )
         )
-        return self.__write_if_accepted(path, value,
-                                        "Do you accept the new data? (y|n)")
+        return self.__write_if_accepted(
+            path, value, "Do you accept the new data? (y|n)"
+        )
 
     def __write_if_accepted(self, data: str, lock_path: Path):
         lock_path.parent.mkdir(parents=True, exist_ok=True)
         if self.__user_accepts():
-            with lock_path.open('w', encoding=ENCODING) as file:
+            with lock_path.open("w", encoding=ENCODING) as file:
                 file.write(data)
             return
         else:
@@ -109,9 +110,9 @@ class Locker:
     @classmethod
     def __user_accepts(cls):
         is_correct = None
-        while is_correct not in ['y', 'n']:
-            is_correct = input('Is this correct? (y|n)').lower()
-        return is_correct == 'y'
+        while is_correct not in ["y", "n"]:
+            is_correct = input("Is this correct? (y|n)").lower()
+        return is_correct == "y"
 
 
 @fixture
@@ -127,10 +128,10 @@ class ReprLocker:
         self.locker = locker
 
     def lock(self, data: ReprBase):
-        self.locker.lock(str(data), 'as_string', 'str')
-        self.locker.lock(data._repr_html_(), 'as_html', 'html')
-        self.locker.lock(data._repr_markdown_(), 'as_markdown', 'md')
-        self.locker.lock(data._repr_latex_(), 'as_latex', 'latex')
+        self.locker.lock(str(data), "as_string", "str")
+        self.locker.lock(data._repr_html_(), "as_html", "html")
+        self.locker.lock(data._repr_markdown_(), "as_markdown", "md")
+        self.locker.lock(data._repr_latex_(), "as_latex", "latex")
 
 
 @fixture
