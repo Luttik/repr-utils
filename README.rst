@@ -1,13 +1,13 @@
-.. image:: https://github.com/luttik/repr_utils/workflows/CI/badge.svg
+.. image:: https://github.com/luttik/repr-utils/workflows/CI/badge.svg
     :alt: actions batch
-    :target: https://github.com/Luttik/repr_utils/actions?query=workflow%3ACI+branch%3Amaster
+    :target: https://github.com/Luttik/repr-utils/actions?query=workflow%3ACI+branch%3Amaster
 .. image:: https://badge.fury.io/py/repr-utils.svg
     :alt: pypi
     :target: https://pypi.org/project/repr-utils/
 
-.. image:: https://codecov.io/gh/luttik/repr_utils/branch/master/graph/badge.svg
+.. image:: https://codecov.io/gh/luttik/repr-utils/branch/master/graph/badge.svg
     :alt: codecov
-    :target: https://codecov.io/gh/luttik/repr_utils
+    :target: https://codecov.io/gh/luttik/repr-utils
 
 REPR-UTIL
 ---------
@@ -45,6 +45,6 @@ Contributions are appreciated.
 
 .. _`the examples notebook`: examples.ipynb
 .. _`pypi`: https://pypi.org/project/repr-utils/
-.. _`github`: https://github.com/Luttik/repr_utils/
+.. _`github`: https://github.com/Luttik/repr-utils/
 .. _`ipython rich display`: https://ipython.readthedocs.io/
 .. _`jupyter`: https://jupyter.org/
